@@ -2,7 +2,7 @@
   "name": "veles_frontend.paymentpage",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",  
+  "main": "webpack.config.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
     "build:development": "cross-env NODE_ENV=staging webpack",
