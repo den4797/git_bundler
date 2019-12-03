@@ -73,6 +73,9 @@ module.exports = {
       {
         test: /.pug$/,
         loader: 'pug-loader',
+        options: {
+          root: path.resolve(__dirname)
+        }
       },
       {
         test: /\.(ico|svg|png|jpg|gif|mp4|mov|pdf|otf)$/,
