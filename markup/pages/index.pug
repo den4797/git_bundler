@@ -1,9 +1,136 @@
-include ../../../bemto/bemto.pug
-
 extends __template.pug
 
 block body
-  ul
-    li Item A
-    li Item B
-    li Item C
+
+  div(class="payment-page")
+    div(class="user-logo")
+      img(class="bg" src="", alt="")
+      img(class="bg-640" src="", alt="")
+    div(class="logo")
+    div(class="price-wrap")
+      div(class="row")
+        div(class="price user-prise")
+          span(class="size24")
+          div(id="rawAmount")
+          span(class="currency") 
+        div(class="name")
+          span(langbl="amount") Сумма платежа
+      div(class="row" id="feeBlock" )
+        div(class="price")
+          span(class="size24")
+            div(id="feeAmount")
+            span(class="currency")
+        div(class="name")
+          span(langbl="fee") Комиссия за платеж
+      div(class="green-border")
+      div(class="row")
+        div(class="price")
+          strong()
+            div(id="orderNumber")
+        div(class="name")
+          span(langbl="orderNumber") Номер заказа
+        h6(langlbl="description") Описание заказа:
+        p
+        div(id="description")
+        p
+    form(id="formPayment" class="data-form" name="PaymentForm")
+      input(id="expiry" type="hidden")
+      input(id="mdOrder" type="hidden")
+      input(id="location" type="hidden" value="/../")
+      input(id="language" type="hidden" value="<ru>")
+      input(id="iPAN" type="hidden" name="$PAN" maxlength="19")
+      fieldset()
+        div(class="top-row")
+          div(class="time-wrap")
+            span(class="time")
+              div(id="numberCountdown")
+            div(class="time-title" langlbl="timeLeft") Время до окончания сессии
+          h2(langlbl="cardData") Ввод данных о карте
+        div(id="errorBlock")
+        div(id="errorBlock1")
+        div(id="infoBlock")
+        div(class="border-card")
+          div(class="number-selection")
+            span(class="title" langlbl="pan") Введите номер карты
+            a(id="dlete-binding" href="#" style="display: none;")
+              span(langlbl="deleteCard") удалить карту
+            select(id="combobox" name="bindingId" type="tel")
+          div(class="choise-date")
+            div(class="title" langlbl="expiry") Срок действия карты
+            select(class="select select-month" name="MM")
+              option(langlbl="jan" value="01") Январь
+              option(langlbl="feb" value="02") Февраль
+              option(langlbl="mar" value="03") Март
+              option(langlbl="apr" value="04") Апрель
+              option(langlbl="may" value="05") Май
+              option(langlbl="jun" value="06") Июнь
+              option(langlbl="jul" value="07") Июль
+              option(langlbl="aug" value="08") Август
+              option(langlbl="sep" value="09") Сентябрь
+              option(langlbl="oct" value="10") Октябрь
+              option(langlbl="nov" value="11") Ноябрь
+              option(langlbl="dec" value="12") Декабрь
+            select(class="selectselect-year" name="YYYY")
+          div(class="name-card")
+            div(class="title" langlbl="cardholder") Владелец карты
+            input(type="text" name="TEXT" id="iTEXT" maxlength="90" autocomplete="off")
+          div(class="code-wrap")
+            div(class="title" langlbl="cvc") Код безопасности
+            div(class="tooltip-wrap")
+              a(class="close" href="#")
+              span(langlbl="cvcDescription") Последние 3 цифры кода <br> на полосе для подписи.
+            div(class="cvc-field")
+              input(inputmode="numeric" pattern="[0-9]*" maxlength="3" class="code" type="password" name="$CVC" id="iCVC" autocomplete="off")
+            div(class="opener-code")
+              span(tabindex="-1" langlbl="showCVC") Показать код
+            div(class="opener-tooltip")
+              span(tabindex="-1" langlbl="whatIsIt") Что это?
+          div(class="card-logo")
+            ul(id="logo-list")
+        div(class="mail-wrap" id="email-container" style="display: none;")
+          div(class="row")
+            label(class="title") Эл. почта владельца карты
+            input(type="text" id="email")
+          div(class="row" id="email-description" langlbl="emailDescription" style="display: none;") Нам понадобится ваш email, чтобы мы могли отправить на него уведомление о платеже.
+          div(class="row" id="email-description-ofd" langlbl="emailDescriptionOfd" style="display: none;") Нам понадобится ваш email, чтобы мы могли отправить на него чек, как того требует ФЗ №54.
+        div(class="mail-wrap" id="phone-container" style="display: none;")
+          div(class="row")
+            label(class="title") Номера телефона владельца карты
+            input(type="tel" id="phone" name="param.phone")
+          div(class="row" id="phone-description" langlbl="phoneDescription" style="display: none;") Нам понадобится ваш №телефона, чтобы мы могли отправить на него уведомление о платеже.
+          div(class="row" id="phone-description-ofd" langlbl="phoneDescriptionOfd" style="display: none;") Нам понадобится ваш №телефона, чтобы мы могли отправить на него чек, как того требует ФЗ №54
+        div(class="bottom=row")
+          a(class="alfaclick-btn" id="buttonPaymentAlfa")
+            strong()
+              span(langlbl="alfaclick") Можно оплатить <br> через Альфа-Клик
+          div(class="ch-col")
+            div(class="row" id="bindingBlock")
+              label(class="ch-wrap")
+                input(class="checkbox" id="createBinding" type="checkbox")
+                span(langlbl="saveCard") Сохранить данные этой карты
+            div(class="row agreeBox" id="agreeBlock" style="display: none;")
+              label(class="ch-wrap")
+                input(class="checkbox" id="agreeCheckbox" tupe="checkbox")
+                span(langlbl="agreement") Я ознакомлен и принимаю условия <br> 
+                  a(id=agreeHref href="#") договора-оферты
+        div(class="bottom-row cup-row")
+          a(class="cupclick-btn" id="buttonPaymentUPOP" style="display: none;")
+            strong()
+              span(langlbl="paymentUPOP") Можно оплатить <br> через CUP
+        div(class="btn-row")
+          div(class="submit-btn" id="buttonPayment" type="button" title="Оплатить" langlbl="payment") Оплатить
+          div(class="submit-btn" id="buttonBindingPayment2" type="button" title="Оплатить" style="display: none;" langlbl="payment") Оплатить
+          
+    form(id="acs" method="post" action="")
+    form(id="formBinding" action="")
+    div(class="security-info")
+    div(class="contect")
+  div(class="load-wraper" title="Оплатить" langlbl="payment")
+    div(class="bg")
+    div(class="clock")
+      span(class="hour")
+      span(class="minute")
+  div(id="modal-binding")
+    p
+      span(class="ui-icon ui-icon-alert")
+      span(langbl="deleteCardMessage") Вы действительно хотите удалить привязанную карту?
