@@ -1,0 +1,49 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Work Sans", sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: auto;
+  height: 75px;
+}
+.foother {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: auto;
+  height: 222px;
+  background-color: #151c22;
+}
+.titleName {
+  display: block;
+  color: #fff;
+  font-weight: 800;
+  font-size: 24px;
+  padding-top: 50px;
+}
+.titleName-head {
+  color: #151c22;
+  padding-top: 26px;
+}
+.navigation {
+  padding-top: 35px;
+  font-weight: 500;
+  font-size: 18px;
+}
+.href {
+  text-decoration: none;
+  color: #fff;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+.gender {
+  font-weight: 500;
+  font-size: 16px;
+}
+.href-gender {
+  color: #151c22;
+}

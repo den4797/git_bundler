@@ -1,10 +1,16 @@
+include ../components/index.styl
+include ../static/mixins/mixins.pug
+include ../components/header/index.pug
+include ../components/foother/index.pug
+
 doctype html
 html(class="no-js", lang="ru")
 
   head
-    title() Альфа-Банк
-
+    title 
+    style
+      include ../static/fonts/index.css
+      include style.css
+    
   body.page
     block body
-
-  block scripts

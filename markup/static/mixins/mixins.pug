@@ -1,0 +1,20 @@
+- var months = [{"text":"Январь", "langlbl":"yan", "value":"01"}, {"text":"Февраль", "langlbl":"feb", "value":"02"}, {"text":"Март", "langlbl":"mar", "value":"03"}, {"text":"Апрель", "langlbl":"apr", "value":"04"}, {"text":"Май", "langlbl":"may", "value":"05"}, {"text":"Июнь", "langlbl":"jun", "value":"06"}, {"text":"Июль", "langlbl":"jul", "value":"07"}, {"text":"Август", "langlbl":"aug", "value":"08"}, {"text":"Сентябрь", "langlbl":"sep", "value":"09"}, {"text":"Октябрь", "langlbl":"oct", "value":"10"}, {"text":"Ноябрь", "langlbl":"nov", "value":"11"}, {"text":"Декабрь", "langlbl":"dec", "value":"12"}]
+
+
+//- mixin css(href)
+
+//-   include href
+
+//- mixin script(src)
+//-   link(type="text/javascript" src=src)
+
+//- mixin select(class1, name, items)
+//-   select(class=class1 name=name)
+//-     each item in items
+//-       option(langlbl=item.langlbl, value=item.value)= item.text
+
+mixin href(href, text)
+  a(class="href", href=href)= text
+
+mixin href-gender(href, text)
+  a(class="href href-gender", href=href)= text

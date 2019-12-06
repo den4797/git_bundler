@@ -1,0 +1,13 @@
+
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans Medium'), local('WorkSans-Medium'), url('Worksansmedium.woff2') format('woff2'), url('Worksansmedium.woff') format('woff'), url('Worksansmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: local('Work Sans ExtraBold'), local('WorkSans-ExtraBold'), url('Worksansextrabold.woff2') format('woff2'), url('Worksansextrabold.woff') format('woff'), url('Worksansextrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
