@@ -1,12 +1,12 @@
 mixin header
     div.header
-        div.gender
+        div.header__gender
             +href-gender("...", "Womann")
             +href-gender("...", "Man")
             +href-gender("...", "New")
-        span(class="titleName titleName-head") Nimes
-        div.store
+        span(class="header__title-name") Nimes
+        div.header__store
             a(class="href href-store", href="href")= ""
-                img(class="" src="../static/img/search.png")
+                img(class="" src="img/search.png")
             a(class="href href-store", href="href")= ""
-                img(class="" src="../static/img/basket.png")
+                img(class="" src="img/basket.png") 

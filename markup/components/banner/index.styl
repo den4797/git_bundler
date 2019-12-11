@@ -1,0 +1,56 @@
+.banner
+  display flex
+  flex-direction row
+  justify-content center
+  text-align center
+  width auto
+  height 260px
+  background-color #F1F2F4
+
+  &__left
+    display flex
+    flex-direction column
+    text-align left
+    padding-top 70px
+
+  &__right
+    width 320px
+
+.crumbs
+
+  &__href
+    text-decoration none
+    font-weight 500
+    font-size 18px
+    line-height 21px
+    color grey
+
+  &__href_active
+    color black
+
+.name
+  line-height 125%
+  padding-top 40px
+  max-width 350px
+  font-weight bold
+  font-size 32px
+
+.logo
+  position absolute
+  width 300x
+  height 260px
+  z-index 3
+  padding-left 30px
+  left 51%
+
+  &__background_left
+    position absolute
+    z-index 1
+    padding-top 125px
+    left 51%
+
+  &__background_right
+    position absolute
+    z-index 2
+    padding-left 130px
+    left 51%

@@ -1,20 +1,17 @@
 - var months = [{"text":"Январь", "langlbl":"yan", "value":"01"}, {"text":"Февраль", "langlbl":"feb", "value":"02"}, {"text":"Март", "langlbl":"mar", "value":"03"}, {"text":"Апрель", "langlbl":"apr", "value":"04"}, {"text":"Май", "langlbl":"may", "value":"05"}, {"text":"Июнь", "langlbl":"jun", "value":"06"}, {"text":"Июль", "langlbl":"jul", "value":"07"}, {"text":"Август", "langlbl":"aug", "value":"08"}, {"text":"Сентябрь", "langlbl":"sep", "value":"09"}, {"text":"Октябрь", "langlbl":"oct", "value":"10"}, {"text":"Ноябрь", "langlbl":"nov", "value":"11"}, {"text":"Декабрь", "langlbl":"dec", "value":"12"}]
 
+- var products = [{"id" : 1, "name" : "Jacket", "img" : "img/products/1.png", "price" : "$ 40", "href" : "..."}, {"id" : 2, "name" : "Jacket", "img" : "img/products/2.png", "price" : "$ 70", "href" : "..."}, {"id" : 3, "name" : "Jacket", "img" : "img/products/3.png", "price" : "$ 60", "href" : "..."}, {"id" : 4, "name" : "Jacket", "img" : "img/products/4.png", "price" : "$ 40", "href" : "..."}, {"id" : 5, "name" : "Jacket", "img" : "img/products/5.png", "price" : "$ 40", "href" : "..."}, {"id" : 6, "name" : "Jacket", "img" : "img/products/6.png", "price" : "$ 40", "href" : "..."}, {"id" : 7, "name" : "Jacket", "img" : "img/products/7.png", "price" : "$ 40", "href" : "..."}, {"id" : 8, "name" : "Jacket", "img" : "img/products/8.png", "price" : "$ 40", "href" : "..."}]
 
-//- mixin css(href)
-
-//-   include href
-
-//- mixin script(src)
-//-   link(type="text/javascript" src=src)
-
-//- mixin select(class1, name, items)
-//-   select(class=class1 name=name)
-//-     each item in items
-//-       option(langlbl=item.langlbl, value=item.value)= item.text
-
-mixin href(href, text)
-  a(class="href", href=href)= text
+mixin href(className, href, text)
+  a(class=className, href=href)= text
 
 mixin href-gender(href, text)
   a(class="href href-gender", href=href)= text
+
+mixin product-card(id, name, img, price, href)
+  each product in products
+    div(class="product-card" id=product.id)
+      a(class="product-card__href" href=product.href)
+        img(class="product-card__logo" src=product.img)
+        a(class="href product-card__name" href=product.href)= product.name
+        span(class="product-card__price")= product.price

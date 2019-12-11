@@ -1,19 +1,19 @@
 mixin footer
 
-    div.foother
-        span(class="titleName-footer") Nimes
-        div.navigation
-            +href("...", "Shop")
-            +href("...", "Delivery")
-            +href("...", "Service")
-            +href("...", "Sitemap")
-            +href("...", "Contacts")
-        div.social
-            a(class="href href-store", href="href")= ""
-                img(class="" src="../static/img/facebook.png")
-            a(class="href href-store", href="href")= ""
-                img(class="" src="../static/img/instagram.png")
-            a(class="href href-store", href="href")= ""
-                img(class="" src="../static/img/ppp.png")
-            a(class="href href-store", href="href")= ""
-                img(class="" src="../static/img/twitter.png")
+    div.footer
+        span(class="footer__title-name") Nimes
+        div.footer__navigation
+            +href("footer__navigation_href", "...", "Shop")
+            +href("footer__navigation_href", "...", "Delivery")
+            +href("footer__navigation_href", "...", "Service")
+            +href("footer__navigation_href", "...", "Sitemap")
+            +href("footer__navigation_href", "...", "Contacts")
+        div.footer__social
+            a(class="href footer__social_href", href="href")= ""
+                img(class="" src="img/facebook.png")
+            a(class="href footer__social_href", href="href")= ""
+                img(class="" src="img/instagram.png")
+            a(class="href footer__social_href", href="href")= ""
+                img(class="" src="img/ppp.png")
+            a(class="href footer__social_href", href="href")= ""
+                img(class="" src="img/twitter.png")

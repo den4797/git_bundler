@@ -1,15 +1,15 @@
 mixin banner
     div.banner
-        div.left-banner
+        div.banner__left
             div.crumbs
-                a(class="href-crumbs", href="href")= "All categories"
-                a(class="href-crumbs")= " / "
-                a(class="href-crumbs", href="href")= "Woman"
-                a(class="href-crumbs")= " / "
-                a(class="href-crumbs href-crumbs-active", href="href")= "Jackets"
+                a(class="crumbs__href", href="href")= "All categories"
+                a(class="crumbs__href")= " / "
+                a(class="crumbs__href", href="href")= "Woman"
+                a(class="crumbs__href")= " / "
+                a(class="crumbs__href crumbs__href_active", href="href")= "Jackets"
 
             span.name= "Denim Collection Fall 2019"
-        div.right-banner
-            img(class="logo logos" src="img/Rectangle_2.png")
-            img(class="logo1 logos" src="img/diagonal1.png")
-            img(class="logo2 logos" src="img/diagonal2.png")
+        div.banner__right
+            img(class="logo" src="img/Rectangle_2.png")
+            img(class="logo__background_left" src="img/diagonal1.png")
+            img(class="logo__background_right" src="img/diagonal2.png")
